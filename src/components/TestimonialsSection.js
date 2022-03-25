@@ -3,8 +3,8 @@ import _ from 'lodash';
 
 import { withPrefix } from '../utils';
 
-export default class TestimonialsSection extends React.Component {
-    renderTestimonial(testimonial) {
+export default function TestimonialsSection(props) {
+    const renderTestimonial = (testimonial) => {
         const content = _.get(testimonial, 'content');
         const avatar = _.get(testimonial, 'avatar');
         const avatarAlt = _.get(testimonial, 'avatar_alt', '');
@@ -31,29 +31,27 @@ export default class TestimonialsSection extends React.Component {
         );
     }
 
-    render() {
-        const section = _.get(this.props, 'section');
-        const sectionId = _.get(section, 'section_id');
-        const title = _.get(section, 'title');
-        const subtitle = _.get(section, 'subtitle');
-        const testimonials = _.get(section, 'testimonials');
+    const section = _.get(props, 'section');
+    const sectionId = _.get(section, 'section_id');
+    const title = _.get(section, 'title');
+    const subtitle = _.get(section, 'subtitle');
+    const testimonials = _.get(section, 'testimonials');
 
-        return (
-            <section id={sectionId} className="section section--testimonials">
-                <div className="container container--lg">
-                    {title && <h2 className="section__title line-top">{title}</h2>}
-                    {subtitle && <p className="section__subtitle">{subtitle}</p>}
-                    {!_.isEmpty(testimonials) && (
-                        <div className="grid">
-                            {_.map(testimonials, (testimonial, index) => (
-                                <div key={index} className="cell">
-                                    {this.renderTestimonial(testimonial)}
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </div>
-            </section>
-        );
-    }
+    return (
+        <section id={sectionId} className="section section--testimonials">
+            <div className="container container--lg">
+                {title && <h2 className="section__title line-top">{title}</h2>}
+                {subtitle && <p className="section__subtitle">{subtitle}</p>}
+                {!_.isEmpty(testimonials) && (
+                    <div className="grid">
+                        {_.map(testimonials, (testimonial, index) => (
+                            <div key={index} className="cell">
+                                {renderTestimonial(testimonial)}
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </section>
+    );
 }

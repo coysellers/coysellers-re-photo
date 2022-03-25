@@ -4,8 +4,8 @@ import _ from 'lodash';
 import { withPrefix, markdownify } from '../utils';
 import CtaButtons from './CtaButtons';
 
-export default class GridSection extends React.Component {
-    renderGridItem(gridItem, index) {
+export default function GridSection(props) {
+    const renderGridItem = (gridItem, index) => {
         const title = _.get(gridItem, 'title');
         const subtitle = _.get(gridItem, 'subtitle');
         const content = _.get(gridItem, 'content');
@@ -36,26 +36,25 @@ export default class GridSection extends React.Component {
         );
     }
 
-    render() {
-        const section = _.get(this.props, 'section');
-        const sectionId = _.get(section, 'section_id');
-        const title = _.get(section, 'title');
-        const subtitle = _.get(section, 'subtitle');
-        const gridItems = _.get(section, 'grid_items');
-        const colNumber = _.get(section, 'col_number', 'three');
+    
+    const section = _.get(props, 'section');
+    const sectionId = _.get(section, 'section_id');
+    const title = _.get(section, 'title');
+    const subtitle = _.get(section, 'subtitle');
+    const gridItems = _.get(section, 'grid_items');
+    const colNumber = _.get(section, 'col_number', 'three');
 
-        return (
-            <section id={sectionId} className="section section--grid">
-                <div className="container container--lg">
-                    {title && <h2 className="section__title line-top">{title}</h2>}
-                    {subtitle && <p className="section__subtitle">{subtitle}</p>}
-                    {!_.isEmpty(gridItems) && (
-                        <div className={`grid grid--col-${colNumber}`}>
-                            {_.map(gridItems, (gridItem, index) => this.renderGridItem(gridItem, index))}
-                        </div>
-                    )}
-                </div>
-            </section>
-        );
-    }
+    return (
+        <section id={sectionId} className="section section--grid">
+            <div className="container container--lg">
+                {title && <h2 className="section__title line-top">{title}</h2>}
+                {subtitle && <p className="section__subtitle">{subtitle}</p>}
+                {!_.isEmpty(gridItems) && (
+                    <div className={`grid grid--col-${colNumber}`}>
+                        {_.map(gridItems, (gridItem, index) => renderGridItem(gridItem, index))}
+                    </div>
+                )}
+            </div>
+        </section>
+    );
 }
