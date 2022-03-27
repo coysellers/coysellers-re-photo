@@ -4,8 +4,7 @@ Hi 👋🏻, my name is Coy. I'm a software developer and photographer located i
 
 **Tentative Checklist:**
 
-- [x] Initial setup of Next.js App
-- [ ] Create an API for real estate photo gallery
-- [ ] Add Routes
-- [ ] Style using [tailwindcss](https://tailwindcss.com/)
-- [ ] Deploy using [Vercel](https://vercel.com/)
+-   [x] Initial setup of Next.js App
+-   [ ] Create an API for real estate photo gallery
+-   [ ] Add Routes
+-   [ ] Deploy using [Vercel](https://vercel.com/)
