@@ -1,5 +1,5 @@
 {
-    "title": "Stackbit Agency Theme",
+    "title": "Coy Sellers Real Estate Photographer",
     "path_prefix": "/",
     "color_scheme": "light",
     "accent_color": "green",
@@ -8,7 +8,7 @@
         "name": "Coy Sellers",
         "title": "Real Estate Photo",
         "logo": "images/logo.svg",
-        "logo_alt": "Agency logo",
+        "logo_alt": "Coy Sellers Real Estate Photography",
         "has_nav": true,
         "nav_links": [
             {

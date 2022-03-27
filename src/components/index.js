@@ -10,6 +10,7 @@ import FormSection from './FormSection';
 import GridSection from './GridSection';
 import Header from './Header';
 import HeroSection from './HeroSection';
+import IntroSection from './IntroSection';
 import Layout from './Layout';
 import Icon from './Icon';
 import ImageSection from './ImageSection';
@@ -32,6 +33,7 @@ export {
     GridSection,
     Header,
     HeroSection,
+    IntroSection,
     Layout,
     Icon,
     ImageSection,
@@ -55,6 +57,7 @@ export default {
     GridSection,
     Header,
     HeroSection,
+    IntroSection,
     Layout,
     Icon,
     ImageSection,

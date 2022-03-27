@@ -10,6 +10,15 @@ sections:
           We are a brand and design practice. We work closely with you, your team to
           deliver inspiring work, which enables your organization to grow. [Let's
           talk](/contact/).
+    - type: intro_section
+      section_id: intro
+      title: >-
+          Hi! I'm a real estate photographer based in Nashille, T.
+      content: >-
+          We are a brand and design practice. We work closely with you, your team to
+          deliver inspiring work, which enables your organization to grow. [Let's
+          talk](/contact/).
+      image: images/intro/self-portrait.jpg
     - type: portfolio_section
       section_id: latest-projects
       layout_style: tiles
